@@ -11,7 +11,7 @@ char    *ft_strcpy(char *s1, char *s2);
 
 
 
-char *ft_strcpy(char *s1, char *s2)
+char    *ft_strcpy(char *s1, char *s2)
 {
 	char *v = s1;
     
