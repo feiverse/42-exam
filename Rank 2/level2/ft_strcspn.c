@@ -24,12 +24,6 @@ size_t	ft_strcspn(const char *s, const char *reject);
 
 
 
-
-
-
-
-
-
 #include <stddef.h>
 
 size_t ft_strcspn(const char *s, const char *reject)
