@@ -48,7 +48,7 @@ char    *ft_itoa(int n)
 
     res[v] = '\0';
 
-    if (n == 0)  // 確保 0 正確處理
+    if (n == 0)
         res[0] = '0';
 
     if (n < 0)
