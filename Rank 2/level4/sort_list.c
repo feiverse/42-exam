@@ -34,7 +34,7 @@ int ascending(int a, int b)
 
 
 -----------------------------------
-./subjects/list.h (Don't need push it)
+./subjects/list.h (Don't need to push it)
 
 typedef struct s_list t_list;
 
