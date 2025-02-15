@@ -65,18 +65,3 @@ int	main(int ac, char **av)
 	printf("\n");
 	return (0);
 }
-
-
-
-// main 2
-int	main(int ac, char **av)
-{
-	if (ac == 2)
-	{
-		int n = atoi(av[1]);
-		if (n > 0)
-			fprime(n);
-	}
-	printf("\n");
-	return 0;
-}
