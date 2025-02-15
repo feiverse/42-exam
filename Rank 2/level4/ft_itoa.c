@@ -63,7 +63,7 @@ char    *ft_itoa(int n)
 }
 
 
-//  
+//  text
 int main() 
 {
     char *s = ft_itoa(-12345);
