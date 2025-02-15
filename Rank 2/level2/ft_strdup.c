@@ -43,7 +43,7 @@ char *ft_strdup(char *src)
 
 int main()
 {
-    char *s1 = "Hello, fei";
+    char *s1 = "Salut, fei";
     char *s2 = ft_strdup(s1);
 
     if (s2)
