@@ -47,6 +47,7 @@ int main(int ac, char **av)
         else if (op == '/') printf("%d\n", a / b);
         else if (op == '%') printf("%d\n", a % b);
     }
-    printf("\n");
+    else
+		printf("\n");
     return 0;
 }
