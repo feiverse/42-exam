@@ -33,13 +33,9 @@ int *ft_range(int start, int end)
     if (!arr)
         return NULL;
 
-    int v = 0;
-    while (start != end)
-    {
-        arr[v++] = start;
-        start += (start < end) ? 1 : -1;
-    }
-    arr[v] = end;
+    for (int v = 0; v < size; v++)
+        arr[v] = (start <= end) ? start + v : start - v;
+
     return arr;
 }
 
