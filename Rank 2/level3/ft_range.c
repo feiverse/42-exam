@@ -33,12 +33,32 @@ int *ft_range(int start, int end)
     if (!arr)
         return NULL;
 
-    int i = 0;
+    int v = 0;
     while (start != end)
     {
-        arr[i++] = start;
+        arr[v++] = start;
         start += (start < end) ? 1 : -1;
     }
-    arr[i] = end;
+    arr[v] = end;
     return arr;
+}
+
+
+
+// test
+
+int	main(void)
+{
+	int start = 2;
+	int end = 7;
+	int *arr = ft_range(start, end);
+	
+	if (!arr)
+		return 1;
+	
+	for (int v = 0; v <= (end - start); v++)
+		printf("%d ", arr[v]);
+
+	printf("\n");
+	free(arr);
 }
