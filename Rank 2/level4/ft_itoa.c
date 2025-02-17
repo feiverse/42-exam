@@ -26,41 +26,43 @@ char	*ft_itoa(int nbr);
 
 #include <stdlib.h>
 
-char    *ft_itoa(int n) 
+char	*ft_itoa(int nbr)
 {
-    int v = 0;
-    long num = n;
+	int v = 0;
+	long n = nbr;
 
-    if (num <= 0) 
-    {
-        v++;
-        num = -num;
-    }
-    long fei = num;
-    while (fei > 0) 
-    {
-        v++;
-        fei /= 10;
-    }
-    char *res = (char *)malloc(v + 1);
-    if (!res)
-        return NULL;
 
-    res[v] = '\0';
+	if (n <= 0)
+	{
+		v++;
+		n = -n;
+	}
+	
+	long fei = n;
+	while (fei > 0)
+	{
+		v++;
+		fei /= 10;
+	}
+	
+	char *res = (char *)malloc(v + 1);
+	if (!res)
+		return NULL;
+	
+	res[v] = '\0';
 
-    if (n == 0)
-        res[0] = '0';
-
-    if (n < 0)
-        res[0] = '-';
-    while (num > 0) 
-    {
-        res[--v] = (num % 10) + '0';
-        num /= 10;
-    }
-
-    return res;
+	if (nbr == 0)
+		res[0] = '0';
+	if (nbr < 0)
+		res[0] = '-';
+	while (n > 0)
+	{
+		res[--v] = (n % 10) + '0';
+		n /= 10;
+	}
+	return res;
 }
+
 
 
 //  text
