@@ -30,7 +30,7 @@ Your function must be prototyped as follows:
 
 
 
-unsigned int	fei(unsigned int a, unsigned int b)
+unsigned int	gcd(unsigned int a, unsigned int b)
 {
 	while (b)
 	{
@@ -47,5 +47,5 @@ unsigned int	lcm(unsigned int a, unsigned int b)
 		return 0;
 	if (a == 0 || b == 0)
 		return 0;
-	return (a / fei(a, b)) * b;
+	return (a / gcd(a, b)) * b;
 }
