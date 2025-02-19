@@ -54,9 +54,13 @@ void	putnbr(int n)
 
 int	main(int ac, char **av)
 {
+	if (ac != 2)
+	{
+		write(1, "0\n", 2);
+		return 0;
+	}
 	int n = atoiv(av[1]);
-	
-	if (ac != 2 || n <= 0) 
+	if (n <= 0) 
 	{
 		write(1, "0\n", 2);
 		return 0;
