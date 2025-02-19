@@ -44,16 +44,16 @@ void fprime(int n)
         printf("1");
         return;
     }
-    int f = 1;
+    int x = 1;
     for (int v = 2; v <= n; v++)
     {
         while (n % v == 0)
         {
-            if (!f)
+            if (!x)
                 printf("*");
             printf("%d", v);
             n /= v;
-            f = 0;
+            x = 0;
         }
     }
 }
