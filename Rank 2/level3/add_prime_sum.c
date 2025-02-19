@@ -26,7 +26,7 @@ $>
   
 #include <unistd.h>
 
-int		atoiv(char *s)
+int	atoiv(char *s)
 {
 	int n = 0;
 	while (*s >= '0' && *s <= '9')
@@ -34,7 +34,7 @@ int		atoiv(char *s)
 	return n;
 }
 
-int		prime(int n)
+int	prime(int n)
 {
 	if (n < 2)
 		return 0;
@@ -52,7 +52,7 @@ void	putnbr(int n)
 	write(1, &c, 1);
 }
 
-int		main(int ac, char **av)
+int	main(int ac, char **av)
 {
 	int n = atoiv(av[1]);
 	
