@@ -53,18 +53,52 @@ void putnbr(int n)
 
 int main(int ac, char **av)
 {
-    if (ac != 2)
-    {
-        write(1, "0\n", 2);
-        return 0;
-    }
+    #include <unistd.h>
+
+int atoiv(char *s)
+{
+    int n = 0;
+    while (*s >= '0' && *s <= '9')
+        n = n * 10 + (*s++ - '0');
+    return n;
+}
+  
+int prime(int n)
+{
+    if (n < 2) return 0;
+    for (int v = 2; v * v <= n; v++)
+        if (n % v == 0)
+            return 0;
+    return 1;
+}
+
+void putnbr(int n)
+{
+    if (n > 9)
+        putnbr(n / 10);
+    char  c = (n % 10) + '0';
+    write(1, &c, 1);
+}
+
+int main(int ac, char **av)
+{
+    int n = atoiv(av[1]);
+	
+	  if (ac != 2 || n <= 0) 
+	  {
+		  write(1, "0\n", 2);
+		  return 0;
+	  }
+
+    int sum = 0;
+    for (int v = 2; v <= n; v++)
+        if (prime(v))
+            sum += v;
     
-    int n = ft_atoi(av[1]);
-    if (n <= 0)
-    {
-        write(1, "0\n", 2);
-        return 0;
-    }
+    putnbr(sum);
+    write(1, "\n", 1);
+    return 0;
+}
 
     int sum = 0;
     for (int v = 2; v <= n; v++)
