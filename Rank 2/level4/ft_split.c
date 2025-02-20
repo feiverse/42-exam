@@ -88,7 +88,6 @@ char **ft_split(char *str)
 
 
 // test
-#include <stdio.h>
 
 int main() 
 {
