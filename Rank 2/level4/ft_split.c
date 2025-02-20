@@ -41,7 +41,7 @@ int count(char *s)
         if (*s)
         {
             count++;
-            while (*str && !sep(*s))
+            while (*s && !sep(*s))
                 s++;
         }
     }
