@@ -40,9 +40,9 @@ void	alpha_mirror(char *s)
 	while (*s)
 	{
 		if (*s >= 97 && *s <= 122)
-			c = 122 - (*s - 97); //Mirror
+			c = 122 - (*s - 97);
 		else if (*s >= 65 && *s <= 90)
-			c = 90 - (*s - 65); // Mirror
+			c = 90 - (*s - 65);
 		else
 			c = *s;
 		write(1, &c,1);
