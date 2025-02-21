@@ -49,17 +49,17 @@ int	galaxy(char *star)
 	return count;
 }
 
-char	*planet(char *s)
+char	*planet(char *star)
 {
 	int	arc = 0;
 	
-	while (s[arc] && !lim(s[arc]))
+	while (star[arc] && !lim(star[arc]))
 		arc++;
 	char *fei = (char *)malloc(arc + 1);
 	if (!fei)
 		return NULL;
 	for (int v = 0; v < arc; v++)
-		fei[v] = s[v];
+		fei[v] = star[v];
 	fei[arc] = '\0';
 	return fei;
 }
