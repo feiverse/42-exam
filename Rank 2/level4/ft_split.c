@@ -175,7 +175,7 @@ int main()
     char **w = ft_split(c);
 
     for (int v = 0; w[v]; v++)
-        printf("Word %d: %s\n", v + 1, w[v]);
+        printf("universe %d: %s\n", v + 1, w[v]);
 
     return 0;
 }
