@@ -24,37 +24,36 @@ int	ft_atoi_base(const char *str, int str_base);
 
 
 
-int    ft_atoi_base(const char *str, int str_base)
+int fei(char c)
 {
-    int v;
-    int res = 0;
+    if (c >= '0' && c <= '9')
+        return (c - '0');
+    else if (c >= 'a' && c <= 'f')
+        return (c - 'a' + 10);
+    else if (c >= 'A' && c <= 'F')
+        return (c - 'A' + 10);
+    return (-1);
+}
+int	ft_atoi_base(const char *str, int str_base)
+{
+	int res = 0;
     int sign = 1;
+    int v;
 
-    if (*str == '-') 
+    if (*str == '-')
     {
         sign = -1;
         str++;
     }
-    
     while (*str)
     {
-        if (*str >= '0' && *str <= '9')
-            v = *str - '0';
-        else if (*str >= 'a' && *str <= 'f')
-            v = *str - 'a' + 10;
-        else if (*str >= 'A' && *str <= 'F')
-            v = *str - 'A' + 10;
-        else
+        v = fei(*str);
+        if (v == -1 || v >= str_base)
             break;
-        
-        if (v >= str_base)
-            break;
-        
         res = res * str_base + v;
         str++;
     }
-    
-    return res * sign;
+    return (res * sign);
 }
 
 
@@ -65,7 +64,6 @@ int    ft_atoi_base(const char *str, int str_base)
 // test
 #include <stdio.h>
 
-int ft_atoi_base(const char *str, int str_base);
 
 int main()
 {
