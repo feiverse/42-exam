@@ -32,39 +32,36 @@ $>
 
 #include <unistd.h>
 
-void ft_union(char *s1, char *s2)
+void	ft_union(char *a, char *b)
 {
-    int v = 0;
-    int asc[256] = {0};
-
-    while (s1[v])
-    {
-        if (asc[(int)s1[v]] == 0)
-        {
-            asc[(int)s1[v]] = 1;
-            write(1, &s1[v], 1);
-        }
-        v++;
-    }
-
-    v = 0;
-    while (s2[v])
-    {
-        if (asc[(int)s2[v]] == 0)
-        {
-            asc[(int)s2[v]] = 1;
-            write(1, &s2[v], 1);
-        }
-        v++;
-    }
+	int v = 0;
+	int fei[256] = {0};
+	
+	while (a[v])
+	{
+		if (fei[(int)a[v]] == 0)
+		{
+			fei[(int)a[v]] = 1;
+			write(1, &a[v], 1);
+		}
+		v++;
+	}
+	v = 0;
+	while (b[v])
+	{
+		if (fei[(int)b[v]] == 0)
+		{
+			fei[(int)b[v]] = 1;
+			write(1, &b[v], 1);
+		}
+		v++;
+	}
 }
 
 int main(int ac, char **av)
 {
-    if (ac == 3)
-    {
-        ft_union(av[1], av[2]);
-    }
-    write(1, "\n", 1);
-    return 0;
+	if (ac == 3)
+		ft_union(av[1], av[2]);
+	write(1, "\n", 1);
+	return 0;
 }
