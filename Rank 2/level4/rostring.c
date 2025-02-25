@@ -38,7 +38,7 @@ $>
 
 void rostring(char *s)
 {
-    int v = 0, rise = 0, done = 0, fei = 1;
+    int v = 0, rise = 0, done = 0, x = 1;
 
     while (s[v] == ' ' || s[v] == '\t')
         v++;
@@ -55,9 +55,9 @@ void rostring(char *s)
     {
         if (s[v] != ' ' && s[v] != '\t')
         {
-            if (!fei)
+            if (!x)
                 write(1, " ", 1);
-            fei = 0;
+            x = 0;
 
             while (s[v] && s[v] != ' ' && s[v] != '\t')
             {
@@ -68,7 +68,7 @@ void rostring(char *s)
         else
             v++;
     }
-    if (rise != done && !fei)
+    if (rise != done && !x)
         write(1, " ", 1);
     while (rise < done)
     {
