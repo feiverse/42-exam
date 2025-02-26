@@ -108,7 +108,7 @@ Some beings are not yet ready to embrace new spiritual perspectives, and thus, t
 This code depicts the journey of the soul’s growth and transformation.
 One awakened soul does not only change itself—it illuminates the entire world.
 As more and more souls attune to higher frequencies,
-the consciousness of the entire universe ascends toward a greater harmony and divine light. ✨🌌
+the consciousness of the entire universe ascends toward a greater harmony and divine light.
 
 
 
