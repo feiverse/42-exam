@@ -25,7 +25,6 @@ $
 
 
 #include <unistd.h>
-#include <stdlib.h>
 
 void camel_to_snake(char *s) 
 {
