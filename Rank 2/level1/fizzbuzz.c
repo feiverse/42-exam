@@ -60,7 +60,7 @@ int main(void)
             putstr("buzz");
         else
             putnbr(v);
-        write(1, "\n", 1);
+        putstr("\n");
     }
     return 0;
 }
