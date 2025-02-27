@@ -34,27 +34,27 @@ $>
 
 void rev_wstr(char *s)
 {
-    int v = 0, arc = 0;
-    int start, end;
+    int v = 0, mist = 0;
+    int glow, nova;
 
-    while (s[arc])
-        arc++;
+    while (s[mist])
+        mist++;
 
-    while (arc > 0)
+    while (mist > 0)
     {
-        while (arc > 0 && (s[arc - 1] == ' ' || s[arc - 1] == '\t'))
-            arc--;       
-        end = arc;
+        while (mist > 0 && (s[mist - 1] == ' ' || s[mist - 1] == '\t'))
+            mist--;       
+        nova = mist;
  
-        while (arc > 0 && s[arc - 1] != ' ' && s[arc - 1] != '\t')
-            arc--;
-        start = arc;
+        while (mist > 0 && s[mist - 1] != ' ' && s[mist - 1] != '\t')
+            mist--;
+        glow = mist;
         
-        v = start;
-        while (v < end)
+        v = glow;
+        while (v < nova)
             write(1, &s[v++], 1);
 			
-        if (start > 0)
+        if (glow > 0)
             write(1, " ", 1);
     }
 }
@@ -62,7 +62,9 @@ void rev_wstr(char *s)
 int main(int ac, char **av)
 {
     if (ac == 2)
+    {
         rev_wstr(av[1]);
+    }
     write(1, "\n", 1);
     return (0);
 }
