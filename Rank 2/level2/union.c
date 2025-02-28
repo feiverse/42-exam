@@ -35,13 +35,13 @@ $>
 void	ft_union(char *a, char *b)
 {
 	int v = 0;
-	int fei[256] = {0};
+	int asc[256] = {0};
 	
 	while (a[v])
 	{
-		if (fei[(int)a[v]] == 0)
+		if (asc[(int)a[v]] == 0)
 		{
-			fei[(int)a[v]] = 1;
+			asc[(int)a[v]] = 1;
 			write(1, &a[v], 1);
 		}
 		v++;
@@ -49,9 +49,9 @@ void	ft_union(char *a, char *b)
 	v = 0;
 	while (b[v])
 	{
-		if (fei[(int)b[v]] == 0)
+		if (asc[(int)b[v]] == 0)
 		{
-			fei[(int)b[v]] = 1;
+			asc[(int)b[v]] = 1;
 			write(1, &b[v], 1);
 		}
 		v++;
