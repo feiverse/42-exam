@@ -26,30 +26,35 @@ $
   
 #include <unistd.h>
 
-int	check_in(char *s, char c, int index)
+void    inter(char *a, char *b)
 {
-	for (int v = 0; v < index; v++)
-		if (s[v] == c)
-			return 1;
-	return 0;
-}
+    int v = 0;
+    int asc[256] = {0};
 
-int check_out(char *s2, char c)
-{
-	while (*s2)
-		if (*s2++ == c)
-			return 1;
-	return 0;
+    while (b[v])
+    {
+        asc[(unsigned char)b[v]] = 1;
+        v++;
+    }
+
+    v = 0;
+    while (a[v])
+    {
+        if (asc[(unsigned char)a[v]] == 1)
+        {
+            write(1, &a[v], 1);
+            asc[(unsigned char)a[v]] = 2;
+        }
+        v++;
+    }
+    write(1, "\n", 1);
 }
 
 int main(int ac, char **av)
 {
-	if (ac == 3)
-	{
-		for (int v = 0; av[1][v]; v++)
-			if (!check_in(av[1], av[1][v], v) && check_out(av[2], av[1][v]))
-				write(1, &av[1][v], 1);
-	}
-	write(1, "\n", 1);
-	return 0;
+    if (ac == 3)
+        inter(av[1], av[2]);
+    else
+        write(1, "\n", 1);
+    return 0;
 }
