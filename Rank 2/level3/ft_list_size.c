@@ -32,13 +32,13 @@ typedef struct    s_list
 
 int	ft_list_size(t_list *begin_list)
 {
-	int	count = 0;
+	int	v = 0;
 	while (begin_list)
 	{
-		count++;
+		v++;
 		begin_list = begin_list->next;
 	}
-	return count;
+	return v;
 }
 
 
