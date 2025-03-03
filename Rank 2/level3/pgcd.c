@@ -23,29 +23,32 @@ $> ./pgcd 17 3 | cat -e
 1$
 $> ./pgcd | cat -e
 $
+
+
+
+
+
+
+
 #include <stdio.h>
 #include <stdlib.h>
 
-
-
-
-
 int pgcd(int a, int b)
 {
-    while (b)
-    {
-        int temp = b;
-        b = a % b;
-        a = temp;
-    }
-    return a;
+	while (b)
+	{
+		int m = b;
+		b = a % b;
+		a = m;
+	}
+	return a;
 }
 
 int main(int ac, char **av)
 {
-    if (ac == 3)
-        printf("%d\n", pgcd(atoi(av[1]), atoi(av[2])));
-    else
-        printf("\n");
-    return 0;
+	if (ac == 3)
+		printf("%d\n", pgcd(atoi(av[1]), atoi(av[2])));
+	else
+		printf("\n");
+	return 0;
 }
