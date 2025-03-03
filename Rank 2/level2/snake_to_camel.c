@@ -40,7 +40,7 @@ void	snake_to_camel(char *s)
 			if(set && s[v] >= 97 && s[v] <= 122)
 				s[v] -= 32;
 			write(1, &s[v], 1);
-           set = 0;
+			set = 0;
 		}
 		v++;
 	}
