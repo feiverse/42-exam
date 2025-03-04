@@ -28,16 +28,15 @@ $
 
 void	snake_to_camel(char *s)
 {
-	int v = 0;
-	int set = 0;
-
+	int v = 0, set = 0;
+	
 	while (s[v])
 	{
 		if (s[v] == '_')
-            set = 1;
+			set = 1;
 		else
 		{
-			if(set && s[v] >= 97 && s[v] <= 122)
+			if (set && s[v] >= 97 && s[v] <= 122)
 				s[v] -= 32;
 			write(1, &s[v], 1);
 			set = 0;
