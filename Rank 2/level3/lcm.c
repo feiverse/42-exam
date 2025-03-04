@@ -34,9 +34,9 @@ unsigned int	gcd(unsigned int a, unsigned int b)
 {
 	while (b)
 	{
-		unsigned int temp = b;
+		unsigned int m = b;
 		b = a % b;
-		a = temp;
+		a = m;
 	}
 	return a;
 }
