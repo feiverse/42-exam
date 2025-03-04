@@ -47,14 +47,12 @@ void    inter(char *a, char *b)
         }
         v++;
     }
-    write(1, "\n", 1);
 }
 
 int main(int ac, char **av)
 {
     if (ac == 3)
         inter(av[1], av[2]);
-    else
-        write(1, "\n", 1);
+	write(1, "\n", 1);
     return 0;
 }
