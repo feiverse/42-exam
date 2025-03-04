@@ -51,8 +51,8 @@ void    inter(char *a, char *b)
 
 int main(int ac, char **av)
 {
-    if (ac == 3)
-        inter(av[1], av[2]);
+	if (ac == 3)
+		inter(av[1], av[2]);
 	write(1, "\n", 1);
-    return 0;
+	return 0;
 }
