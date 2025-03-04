@@ -41,43 +41,44 @@ $>
 
 #include <unistd.h>
 
-void putnbr(int n) 
+void	putnbr(int n) 
 {
-    if (n > 9)
-        putnbr(n / 10);
-    char c = n % 10 + '0';
-    write(1, &c, 1);
+	if (n > 9)
+		putnbr(n / 10);
+	char c = n % 10 + '0';
+	write(1, &c, 1);
 }
 
-void putstr(char *s) 
+void	putstr(char *s) 
 {
-    while (*s)
-        write(1, s++, 1);
+	while (*s)
+		write(1, s++, 1);
 }
 
-int atoi_s(char *s) 
+int	atoi_s(char *s) 
 {
-    int n = 0;
-    while (*s >= '0' && *s <= '9')
-        n = n * 10 + (*s++ - '0');
-    return n;
+	int n = 0;
+	while (*s >= '0' && *s <= '9')
+		n = n * 10 + (*s++ - '0');
+	return n;
 }
 
-int main(int ac, char **av) 
+int	main(int ac, char **av) 
 {
-    if (ac == 2) 
+	if (ac == 2) 
 	{
-        int n = atoi_s(av[1]);
-        for (int v = 1; v <= 9; v++) 
+		int n = atoi_s(av[1]);
+		for (int v = 1; v <= 9; v++) 
 		{
-            putnbr(v);
-            putstr(" x ");
-            putnbr(n);
-            putstr(" = ");
-            putnbr(i * n);
-            putstr("\n");
-        }
-    } else
-        write(1, "\n", 1);
-    return 0;
+			putnbr(v);
+			putstr(" x ");
+			putnbr(n);
+			putstr(" = ");
+			putnbr(v * n);
+			putstr("\n");
+		}
+	}
+	else
+		putstr("\n");
+	return 0;
 }
