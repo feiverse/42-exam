@@ -35,7 +35,7 @@ $>
 
 #include <unistd.h>
 
-void	putnbr(char *s)
+void	putstr(char *s)
 {
 	while (*s)
 		write(1, s++, 1);
