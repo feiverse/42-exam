@@ -38,15 +38,15 @@ int	main(int ac, char **av)
 	if (ac == 2)
 	{
 		char	*s = av[1];
-		int	v = 0, done = 0, rise = 0;
+		int	v = 0, last = 0, word = 0;
 		
 		while (s[v]) v++;
 		while (v > 0 && (s[v - 1] == ' ' || s[v - 1] == '\t')) v--;
-		done = v;
+		last = v;
 		while (v > 0 && s[v - 1] != ' ' && s[v - 1] != '\t') v--;
-		rise = v;
+		word = v;
 
-		write(1, &s[rise], done - rise);			
+		write(1, &s[word], last - word);			
 	}
 	write(1, "\n", 1);
 	return 0;
