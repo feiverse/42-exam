@@ -39,29 +39,29 @@ $>
 
 #include <unistd.h>
 
-void    expand_str(char *s)
+void	expand_str(char *s)
 {
-	int v = 0, word = 0;
+	int v = 0, space3 = 0;
 
 	while (s[v] == ' ' || s[v] == '\t')
 		v++;
-
+	
 	while (s[v])
 	{
 		if (s[v] != ' ' && s[v] != '\t')
 		{
-			if (word)
+			if (space3)
 				write(1, "   ", 3);
-			word = 1;
+			space3 =1;
 			while (s[v] && s[v] != ' ' && s[v] != '\t')
 				write(1, &s[v++], 1);
 		}
 		else
-            v++;
+			v++;
 	}
 }
 
-int    main(int ac, char **av)
+int main(int ac, char **av)
 {
 	if (ac == 2 && av[1][0])
 		expand_str(av[1]);

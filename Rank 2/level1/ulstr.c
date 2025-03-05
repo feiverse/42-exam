@@ -32,25 +32,22 @@ $
 
 #include <unistd.h>
 
-int    main(int ac, char **av)
+int main(int ac, char **av)
 {
-	int    v;
-    char   c;
-    
-    if (ac == 2)
-    {
-        v = 0;
-        while (av[1][v])
-        {
-            c = av[1][v];
-            if (c >= 97 && c <= 122)
-                c -= 32；
-            else if (c >= 65 && c <= 90)
-                c += 32;
-            write(1, &c, 1);
-            v++;
-        }
-    }
-    write(1, "\n", 1);
-    return 0;
+	if (ac == 2)
+	{
+		int v = 0;
+		while (av[1][v])
+		{
+			char c = av[1][v];
+			if (c >= 97 && c <= 122)
+				c -= 32;
+			else if (c >= 65 && c <= 90)
+				c += 32;
+			write(1, &c, 1);
+			v++;
+		}
+	}
+	write(1, "\n", 1);
+	return 0;
 }
