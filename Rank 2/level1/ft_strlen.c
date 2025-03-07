@@ -1,19 +1,14 @@
-Assignment name  : ft_strlen
-Expected files   : ft_strlen.c
-Allowed functions:
---------------------------------------------------------------------------------
-
-Write a function that returns the length of a string.
-
-Your function must be declared as follows:
-
-int	ft_strlen(char *str);
-
-
-
-
-
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fwei <fwei@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/07 23:06:50 by fwei              #+#    #+#             */
+/*   Updated: 2025/03/07 23:07:54 by fwei             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 int	ft_strlen(char *str)
 {
@@ -26,14 +21,15 @@ int	ft_strlen(char *str)
 
 
 
-// test
+/* test */
 #include <stdio.h>
 
 int ft_strlen(char *s);
 
-int main() {
-    printf("%d\n", ft_strlen("Hey Fei"));       // 7
-    printf("%d\n", ft_strlen(""));            // 0
-    printf("%d\n", ft_strlen("Le monde de l’imagination est sans frontières."));  // 49
-    return 0;
+int main()
+{
+	printf("%d\n", ft_strlen("Hey Fei")); // 7
+	printf("%d\n", ft_strlen(""));	// 0
+	printf("%d\n", ft_strlen("Le monde de l’imagination est sans frontières."));  // 49
+	return 0;
 }

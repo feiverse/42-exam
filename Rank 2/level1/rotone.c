@@ -1,38 +1,18 @@
-Assignment name  : rotone
-Expected files   : rotone.c
-Allowed functions: write
---------------------------------------------------------------------------------
-
-Write a program that takes a string and displays it, replacing each of its
-letters by the next one in alphabetical order.
-
-'z' becomes 'a' and 'Z' becomes 'A'. Case remains unaffected.
-
-The output will be followed by a \n.
-
-If the number of arguments is not 1, the program displays \n.
-
-Example:
-
-$>./rotone "abc"
-bcd
-$>./rotone "Les stagiaires du staff ne sentent pas toujours tres bon." | cat -e
-Mft tubhjbjsft ev tubgg of tfoufou qbt upvkpvst usft cpo.$
-$>./rotone "AkjhZ zLKIJz , 23y " | cat -e
-BlkiA aMLJKa , 23z $
-$>./rotone | cat -e
-$
-$>
-$>./rotone "" | cat -e
-$
-$>
-
-
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rotone.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fwei <fwei@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/07 23:17:24 by fwei              #+#    #+#             */
+/*   Updated: 2025/03/07 23:17:30 by fwei             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include <unistd.h>
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
 	if (ac == 2)
 	{

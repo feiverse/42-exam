@@ -1,19 +1,16 @@
-Assignment name  : ft_putstr
-Expected files   : ft_putstr.c
-Allowed functions: write
---------------------------------------------------------------------------------
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fwei <fwei@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/07 16:52:35 by fwei              #+#    #+#             */
+/*   Updated: 2025/03/07 16:52:37 by fwei             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-Write a function that displays a string on the standard output.
-
-The pointer passed to the function contains the address of the string's first
-character.
-
-Your function must be declared as follows:
-
-void	ft_putstr(char *str);
-
-
-
+#include <unistd.h>
 
 void    ft_putstr(char *str)
 {
