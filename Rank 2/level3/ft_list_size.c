@@ -1,28 +1,14 @@
-Assignment name  : ft_list_size
-Expected files   : ft_list_size.c
-Allowed functions: 
---------------------------------------------------------------------------------
-
-Write a function that returns the number of elements in the linked list that's
-passed to it.
-
-It must be declared as follows:
-
-int	ft_list_size(t_list *begin_list);
-
-You must use the following structure in your program ft_list_size.c :
-
-typedef struct    s_list
-{
-    struct s_list *next;
-    void          *data;
-}                 t_list;
-
-
-
-
-
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_list_size.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fwei <fwei@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/07 15:31:22 by fwei              #+#    #+#             */
+/*   Updated: 2025/03/07 15:43:57 by fwei             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 typedef struct    s_list
 {
@@ -44,28 +30,29 @@ int	ft_list_size(t_list *begin_list)
 
 
 
-// test
+/* test */
 
 #include <stdio.h>
 #include <stdlib.h>
 
 t_list *create_node(void *data)
 {
-    t_list *new_node = (t_list *)malloc(sizeof(t_list));
-    if (!new_node)
-        return NULL;
-    new_node->data = data;
-    new_node->next = NULL;
-    return new_node;
+	t_list *v = (t_list *)malloc(sizeof(t_list));
+	if (!v)
+		return NULL;
+	
+	v->data = data;
+	v->next = NULL;
+	return v;
 }
 
 int main()
 {
-    t_list *head = create_node("First");
-    head->next = create_node("Second");
-    head->next->next = create_node("Third");
+	t_list *v = create_node("un");
 
-    printf("List size: %d\n", ft_list_size(head)); // 3
+	v->next = create_node("deux");
+	v->next->next = create_node("troix");
+	printf("List size: %d\n", ft_list_size(v)); // 3
 
-    return 0;
+	return 0;
 }

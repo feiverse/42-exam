@@ -1,32 +1,18 @@
-Assignment name  : ft_range
-Expected files   : ft_range.c
-Allowed functions: malloc
---------------------------------------------------------------------------------
-
-Write the following function:
-
-int     *ft_range(int start, int end);
-
-It must allocate (with malloc()) an array of integers, fill it with consecutive
-values that begin at start and end at end (Including start and end !), then
-return a pointer to the first value of the array.
-
-Examples:
-
-- With (1, 3) you will return an array containing 1, 2 and 3.
-- With (-1, 2) you will return an array containing -1, 0, 1 and 2.
-- With (0, 0) you will return an array containing 0.
-- With (0, -3) you will return an array containing 0, -1, -2 and -3.
-
-
-
-
-
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fwei <fwei@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/07 15:27:58 by fwei              #+#    #+#             */
+/*   Updated: 2025/03/07 15:44:03 by fwei             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include <stdlib.h>
 
-int *ft_range(int start, int end)
+int	*ft_range(int start, int end)
 {
     int soul = (start <= end) ? (end - start + 1) : (start - end + 1);
     int *arc = (int *)malloc(sizeof(int) * soul);
@@ -40,7 +26,7 @@ int *ft_range(int start, int end)
 }
 
 
-//
+/******/
 Start and End are two states of the soul,
 symbolizing the beginning and completion of spiritual and conscious awakening.
 
@@ -86,16 +72,16 @@ Arc 則勾勒出靈魂在這段探索之中的優美弧線
 每一步都映照著靈性的成長與旅程的回顧（start - v）
 
 
-// test
+/* test */
 int	main(void)
 {
 	int start = 36;
 	int end = 42;
 	int *fei = ft_range(start, end);
-	
+
 	if (!fei)
 		return 1;
-	
+
 	for (int v = 0; v <= (end - start); v++)
 		printf("%d ", fei[v]);
 

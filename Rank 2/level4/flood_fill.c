@@ -1,28 +1,14 @@
-Assignment name  : flood_fill
-Expected files   : flood_fill.c
-Allowed functions: -
---------------------------------------------------------------------------------
-
-Write a function that takes a char ** as a 2-dimensional array of char, a 
-t_point as the dimensions of this array and a t_point as the starting point.
-
-Starting from the given 'begin' t_point, this function fills an entire zone 
-by replacing characters inside with the character 'F'. A zone is an group of 
-the same character delimitated horizontally and vertically by other characters
-or the array boundry.
-
-The flood_fill function won't fill diagonally.
-
-The flood_fill function will be prototyped like this:
-  void  flood_fill(char **tab, t_point size, t_point begin);
-
-The t_point structure is prototyped like this: (put it in flood_fill.c)
-
-
-
-
-
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   flood_fill.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fwei <fwei@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/07 15:57:03 by fwei              #+#    #+#             */
+/*   Updated: 2025/03/07 15:58:23 by fwei             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 typedef struct s_point
 {
@@ -30,29 +16,29 @@ typedef struct s_point
     int y;
 }   t_point;
 
-void fill(char **tab, t_point size, int x, int y, char aura)
+void	fill(char **tab, t_point size, int x, int y, char aura)
 {
-    if (x < 0 || y < 0 || x >= size.x || y >= size.y || tab[y][x] != aura)
-        return ;
-    
-    tab[y][x] = 'F';
+	if (x < 0 || y < 0 || x >= size.x || y >= size.y || tab[y][x] != aura)
+		return ;
 
-    fill(tab, size, x + 1, y, aura);
-    fill(tab, size, x - 1, y, aura);
-    fill(tab, size, x, y + 1, aura);
-    fill(tab, size, x, y - 1, aura);
+	tab[y][x] = 'F';
+
+	fill(tab, size, x + 1, y, aura);
+	fill(tab, size, x - 1, y, aura);
+	fill(tab, size, x, y + 1, aura);
+	fill(tab, size, x, y - 1, aura);
 }
 
-void flood_fill(char **tab, t_point size, t_point begin)
+void	flood_fill(char **tab, t_point size, t_point begin)
 {
-    char aura = tab[begin.y][begin.x];
-    if (aura != 'F')
-        fill(tab, size, begin.x, begin.y, aura);
+	char aura = tab[begin.y][begin.x];
+	if (aura != 'F')
+		fill(tab, size, begin.x, begin.y, aura);
 }
 
 
 
-///
+/******/
 Every newly born soul carries a unique spiritual energy aura (Aura).
 At birth, this aura is but a faint glimmer, wrapped in layers of environment, memories, and experiences,
 gradually weaving into an energy field composed of different vibrational frequencies.

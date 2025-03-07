@@ -1,28 +1,14 @@
-Assignment name  : print_hex
-Expected files   : print_hex.c
-Allowed functions: write
---------------------------------------------------------------------------------
-
-Write a program that takes a positive (or zero) number expressed in base 10,
-and displays it in base 16 (lowercase letters) followed by a newline.
-
-If the number of parameters is not 1, the program displays a newline.
-
-Examples:
-
-$> ./print_hex "10" | cat -e
-a$
-$> ./print_hex "255" | cat -e
-ff$
-$> ./print_hex "5156454" | cat -e
-4eae66$
-$> ./print_hex | cat -e
-$
-
-
-
-
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   print_hex.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fwei <fwei@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/07 15:39:28 by fwei              #+#    #+#             */
+/*   Updated: 2025/03/07 15:39:31 by fwei             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include <unistd.h>
 

@@ -34,35 +34,34 @@ $>
 
 void rev_wstr(char *s)
 {
+	int glow, nova;
     int v = 0, mist = 0;
-    int glow, nova;
-
-    while (s[mist])
+	
+	while (s[mist])
         mist++;
-
-    while (mist > 0)
-    {
-        while (mist > 0 && (s[mist - 1] == ' ' || s[mist - 1] == '\t'))
-            mist--;       
-        nova = mist;
- 
-        while (mist > 0 && s[mist - 1] != ' ' && s[mist - 1] != '\t')
-            mist--;
-        glow = mist;
-        
-        v = glow;
-        while (v < nova)
-            write(1, &s[v++], 1);
-			
-        if (glow > 0)
-            write(1, " ", 1);
-    }
+	
+	while (mist > 0)
+	{
+		while (mist > 0 && (s[mist - 1] == ' ' || s[mist - 1] == '\t'))
+			mist--;
+		nova = mist;
+		
+		while (mist > 0 && s[mist - 1] != ' ' && s[mist - 1] != '\t')
+			mist--;
+		glow = mist;
+		
+		v = glow;
+		while (v < nova)
+			write(1, &s[v++], 1);
+		if (glow > 0)
+			write(1, " ", 1);
+	}
 }
 
 int main(int ac, char **av)
 {
-    if (ac == 2)
-        rev_wstr(av[1]);
-    write(1, "\n", 1);
-    return 0;
+	if (ac == 2)
+		rev_wstr(av[1]);
+	write(1, "\n", 1);
+	return 0;
 }

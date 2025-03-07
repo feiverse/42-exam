@@ -1,41 +1,20 @@
-Assignment name  : str_capitalizer
-Expected files   : str_capitalizer.c
-Allowed functions: write
---------------------------------------------------------------------------------
-
-Write a program that takes one or several strings and, for each argument,
-capitalizes the first character of each word (If it's a letter, obviously),
-puts the rest in lowercase, and displays the result on the standard output,
-followed by a \n.
-
-A "word" is defined as a part of a string delimited either by spaces/tabs, or
-by the start/end of the string. If a word only has one letter, it must be
-capitalized.
-
-If there are no arguments, the progam must display \n.
-
-Example:
-
-$> ./str_capitalizer | cat -e
-$
-$> ./str_capitalizer "a FiRSt LiTTlE TESt" | cat -e
-A First Little Test$
-$> ./str_capitalizer "__SecONd teST A LITtle BiT   Moar comPLEX" "   But... This iS not THAT COMPLEX" "     Okay, this is the last 1239809147801 but not    the least    t" | cat -e
-__second Test A Little Bit   Moar Complex$
-   But... This Is Not That Complex$
-     Okay, This Is The Last 1239809147801 But Not    The Least    T$
-$>
-
-
-
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   str_capitalizer.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fwei <fwei@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/07 15:45:06 by fwei              #+#    #+#             */
+/*   Updated: 2025/03/07 15:46:11 by fwei             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include <unistd.h>
 
 void	strc(char *s)
 {
-	int v = 0;
-	int new = 1;
+	int v = 0, src = 1;
 
 	while (s[v])
 	{
@@ -43,17 +22,17 @@ void	strc(char *s)
 
 		if (c >= 97 && c <= 122)
 		{
-			if (new)
+			if (src)
 				c -= 32;
 		}
 		else if (c >= 65 && c <= 90)
 		{
-			if (!new)
+			if (!src)
 				c += 32;
 		}
 		write(1, &c, 1);
 
-		new = (c == ' ' || c == '\t');
+		src = (c == ' ' || c == '\t');
 		v++;
 	}
 }
@@ -72,5 +51,5 @@ int	main(int ac, char **av)
 			v++;
 		}
 	}
-	return (0);
+	return 0;
 }

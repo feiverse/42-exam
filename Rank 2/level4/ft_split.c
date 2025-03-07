@@ -1,28 +1,14 @@
-Assignment name  : ft_split
-Expected files   : ft_split.c
-Allowed functions: malloc
---------------------------------------------------------------------------------
-
-Write a function that takes a string, splits it into words, and returns them as
-a NULL-terminated array of strings.
-
-A "word" is defined as a part of a string delimited either by spaces/tabs/new
-lines, or by the start/end of the string.
-
-Your function must be declared as follows:
-
-char    **ft_split(char *str);
-
-
-
-
-
-
-
-
-
-
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fwei <fwei@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/07 16:10:44 by fwei              #+#    #+#             */
+/*   Updated: 2025/03/07 16:13:55 by fwei             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include <stdlib.h>
 
@@ -52,7 +38,7 @@ int	galaxy(char *star)
 char	*planet(char *star)
 {
 	int	arc = 0;
-	
+
 	while (star[arc] && !lim(star[arc]))
 		arc++;
 	char *fei = (char *)malloc(arc + 1);
@@ -67,8 +53,7 @@ char	*planet(char *star)
 char	**ft_split(char *str)
 {
 	int	fei = galaxy(str);
-	char **verse = (char **)malloc((fei + 1) * sizeof(char *));
-	
+	char **verse = (char **)malloc((fei + 1) * sizeof(char *));	
 	if (!verse)
 		return NULL;
 	
@@ -89,7 +74,7 @@ char	**ft_split(char *str)
 }
 
 
-///***
+/******/
 In the boundless universe, countless galaxies are scattered across the cosmos.
 They are separated by mysterious boundaries, like the limits of the universe,
 formed by drifting interstellar dust (spaces, tabs, newlines).
@@ -104,7 +89,7 @@ counting the stars within the visible galaxy, ensuring that no star is overlooke
 
 *planet . s
 
-My interstellar collection device, designed to capture and record each celestial body's complete shape and radiance.
+My interstellar collection device, designed to capture and record each celestial bodys complete shape and radiance.
 
 **ft_split . str
 
@@ -120,7 +105,7 @@ constructing our very own stellar map.
     
 ///***
 Dans l'univers infini, d'innombrables galaxies sont dispersées à travers le cosmos.
-Elles sont séparées par des frontières mystérieuses, semblables aux limites de l'univers,
+Elles sont séparées par des frontières mystérieuses, semblables aux limites de l'univers',
 formées par une poussière interstellaire flottante (espaces, tabulations, sauts de ligne).
 Ces frontières ne sont pas seulement des barrières entre les galaxies, mais aussi des marques délimitant l’appartenance de chaque astre.
 
@@ -130,11 +115,11 @@ Elle nous aide à distinguer les différentes galaxies (' ', '\t', '\n').
 galaxy .star
 
 Un scanner galactique qui nous permet de traverser la poussière cosmique,
-de compter les étoiles visibles dans la galaxie et de nous assurer qu'aucune ne soit oubliée.
+de compter les étoiles visibles dans la galaxie et de nous assurer qu'aucune ne soit oubliée'.
 
 planet .s
 
-Mon dispositif de collection interstellaire, conçu pour capturer et enregistrer la silhouette et l'éclat de chaque planète.
+Mon dispositif de collection interstellaire, conçu pour capturer et enregistrer la silhouette et l'éclat de chaque planète'.
 
 ft_split .str
 
@@ -174,14 +159,13 @@ galaxy .star
 勾勒出屬於於我的星際探索地圖
 
 
-// test
+/* test */
 int main() 
 {
-    char *c = "   Bonjour   fei\tthis is  answers  !  \n";
-    char **w = ft_split(c);
+	char *c = "   Bonjour   fei\tthis is  answers  !  \n";
+	char **w = ft_split(c);
 
-    for (int v = 0; w[v]; v++)
-        printf("universe %d: %s\n", v + 1, w[v]);
-
-    return 0;
+	for (int v = 0; w[v]; v++)
+		printf("universe %d: %s\n", v + 1, w[v]);
+	return 0;
 }

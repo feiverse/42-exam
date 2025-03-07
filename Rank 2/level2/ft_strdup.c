@@ -1,69 +1,52 @@
-Assignment name  : ft_strdup
-Expected files   : ft_strdup.c
-Allowed functions: malloc
---------------------------------------------------------------------------------
-
-Reproduce the behavior of the function strdup (man strdup).
-
-Your function must be declared as follows:
-
-char    *ft_strdup(char *src);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fwei <fwei@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/07 14:55:47 by fwei              #+#    #+#             */
+/*   Updated: 2025/03/07 14:58:47 by fwei             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include <stdlib.h>
 
-char *ft_strdup(char *src)
+char	*ft_strdup(char *src)
 {
-    int fei = 0;
-    
-    while (src[fei])
-        fei++;
+	int arc = 0;
+	
+	while (src[arc])
+		arc++;
+	
+	char *dup = (char *)malloc(arc + 1);
+	if (!dup)
+		return NULL;
 
-    char *dup = (char *)malloc(fei + 1);
-    if (!dup)
-        return NULL;
-
-    for (int v = 0; v <= len; v++)
-        dup[v] = src[v];
-    return dup;
+	for (int v = 0; v <= arc; v++)
+		dup[v] = src[v];
+	return dup;
 }
 
 
 
-
-
-// test
+/* test */
 #include <stdio.h>
 
 int main()
 {
-    char *s1 = "Salut, fei";
-    char *s2 = ft_strdup(s1);
-
-    if (s2)
-    {
-        printf("Original: %s\n", s1);
-        printf("Duplicate: %s\n", s2);
-        free(s2);
-    }
+	char *v1 = "Salut, fei";
+	char *v2 = ft_strdup(v1);
+	
+	if (v2)
+	{
+        printf("Original: %s\n", v1);
+        printf("Duplicate: %s\n", v2);
+        free(v2);
+	}
     else
-    {
+	{
         printf("Memory KO!!!\n");
-    }
-
+	}
     return 0;
 }

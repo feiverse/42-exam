@@ -1,58 +1,45 @@
-Assignment name	: ft_strpbrk
-Expected files	: ft_strpbrk.c
-Allowed functions: None
----------------------------------------------------------------
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strpbrk.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fwei <fwei@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/07 14:59:57 by fwei              #+#    #+#             */
+/*   Updated: 2025/03/07 15:02:50 by fwei             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-Reproduce exactly the behavior of the function strpbrk
-(man strpbrk).
+#include <stdlib.h>
 
-The function should be prototyped as follows:
-
-char	*ft_strpbrk(const char *s1, const char *s2);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-char *ft_strpbrk(const char *s1, const char *s2)
+char	*ft_strpbrk(const char *s1, const char *s2)
 {
-    while (*s1)
-    {
-        for (const char *v = s2; *v; v++)
-            if (*s1 == *v)
-                return (char *)s1;
-        s1++;
-    }
-    return NULL;
+	while (*s1)
+	{
+		for (const char *v = s2; *v; v++)
+			if (*s1 == *v)
+				return (char *)s1;
+			s1++;
+	}
+	return NULL;
 }
 
 
 
 
 
-
-//test
+/* test */
 
 #include <stdio.h>
 
 int main()
 {
-    char str1[] = "Hey fei";
-    char str2[] = "yf";
-    char str3[] = "salut";
+	char v1[] = "Hey fei";
+	char v2[] = "yf";
+	char v3[] = "salut";
+	
+	printf("%s\n", ft_strpbrk(v1, v2)); // "y fei"
+	printf("%s\n", ft_strpbrk(v1, v3)); // (null) 
 
-    printf("%s\n", ft_strpbrk(str1, str2)); // "y fei"
-    printf("%s\n", ft_strpbrk(str1, str3)); // (null) 
-    
-    return 0;
+	return 0;
 }

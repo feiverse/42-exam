@@ -1,28 +1,14 @@
-Assignment name  : print_bits
-Expected files   : print_bits.c
-Allowed functions: write
---------------------------------------------------------------------------------
-
-Write a function that takes a byte, and prints it in binary WITHOUT A NEWLINE
-AT THE END.
-
-Your function must be declared as follows:
-
-void	print_bits(unsigned char octet);
-
-Example, if you pass 2 to print_bits, it will print "00000010"
-
-
-
-
-
-
-
-
-
-
-
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   print_bits.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fwei <fwei@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/07 15:10:53 by fwei              #+#    #+#             */
+/*   Updated: 2025/03/07 15:11:37 by fwei             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include <unistd.h>
 
@@ -39,14 +25,9 @@ void	print_bits(unsigned char octet)
 }
 
 
-
-
-
-
-
-// test
+/* test */
 int	main(void)
 {
 	print_bits(2);  // 00000010
-	return (0);
+	return 0;
 }

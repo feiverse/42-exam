@@ -1,44 +1,30 @@
-Assignment name  : ft_strrev
-Expected files   : ft_strrev.c
-Allowed functions:
---------------------------------------------------------------------------------
-
-Write a function that reverses (in-place) a string.
-
-It must return its parameter.
-
-Your function must be declared as follows:
-
-char    *ft_strrev(char *str);
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fwei <fwei@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/07 15:04:56 by fwei              #+#    #+#             */
+/*   Updated: 2025/03/07 15:06:06 by fwei             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 char	*ft_strrev(char *str)
 {
-    char v, *done = str;
-    if (!str) 
+	char v, *done = str;
+	if (!str)
 		return str;
 
-    while (*done) 
-		done++;  
-    done--;  
+	while (*done) 
+		done++;
+	done--;  
 
-    while (str < done)
-    {
-        v = *str;
-        *str++ = *done;
-        *done-- = v;
-    }
-    return str;
+	while (str < done)
+	{
+		v = *str;
+		*str++ = *done;
+		*done-- = v;
+	}
+	return str;
 }
