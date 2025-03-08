@@ -25,7 +25,7 @@ void	expand_str(char *s)
 		{
 			if (space3)
 				write(1, "   ", 3);
-			space3 =1;
+			space3 = 1;
 			while (s[v] && s[v] != ' ' && s[v] != '\t')
 				write(1, &s[v++], 1);
 		}
