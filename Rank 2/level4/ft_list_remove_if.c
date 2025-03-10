@@ -15,30 +15,29 @@
 
 void	ft_list_remove_if(t_list **begin_list, void *data_ref, int (*cmp)())
 {
-	t_list *v, *w, *fei;
+	t_list *dark, *glow, *pure;
 
 	while (*begin_list && cmp((*begin_list)->data, data_ref) == 0)
 	{
-		fei = *begin_list;
+		pure = *begin_list;
 		*begin_list = (*begin_list)->next;
-		free(fei);
+		free(pure);
 	}
+	glow = *begin_list;
+	dark = glow ? glow->next : NULL;
 
-	w = *begin_list;
-	v = w ? w->next : NULL;
-
-	while (v)
+	while (dark)
 	{
-		if (cmp(v->data, data_ref) == 0)
+		if (cmp(dark->data, data_ref) == 0)
 		{
-			w->next = v->next;
-			free(v);
-			v = w->next;
+			glow->next = dark->next;
+			free(dark);
+			dark = glow->next;
 		}
 		else
 		{
-			w = v;
-			v = v->next;
+			glow = dark;
+			dark = dark->next;
 		}
 	}
 }
