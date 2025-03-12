@@ -20,7 +20,7 @@ int main(int ac, char **av)
 		while (av[1][v] == ' ' || av[1][v] == '\t')
 			v++;
 		while (av[1][v] && av[1][v] != ' ' && av[1][v] != '\t')
-			write(1, &av[1][v], 1);
+			write(1, &av[1][v++], 1);
 	}
 	write(1, "\n", 1);
 	return 0;
