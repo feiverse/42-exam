@@ -12,7 +12,7 @@
 
 #include <unistd.h>
 
-int	main(int ac, char **av)
+int main(int ac, char **av)
 {
 	if (ac == 3)
 	{
@@ -21,9 +21,8 @@ int	main(int ac, char **av)
 		while (*y && *x)
 			if (*y++ == *x)
 				x++;
-		write(1, (*x ? "0\n" : "1\n"), 2);
+		write(1, (*x ? "0" : "1"), 1);
 	}
-	else
-		write(1, "\n", 1);
+	write(1, "\n", 1);
 	return 0;
 }
