@@ -15,14 +15,14 @@ void	sort_int_tab(int *tab, unsigned int size)
 	for (unsigned int v = 1; v < size; v++)
 	{
 		int fei = tab[v];
-		int w = v - 1;
+		int soul = v - 1;
 		
-		while (w >= 0 && tab[w] > fei)
+		while (soul >= 0 && tab[soul] > fei)
 		{
-			tab[w + 1] = tab[w];
-			w = w - 1;
+			tab[soul + 1] = tab[soul];
+			soul = soul - 1;
 		}
-		tab[w + 1] = fei;
+		tab[soul + 1] = fei;
 	}
 }
 
