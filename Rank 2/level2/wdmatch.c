@@ -6,7 +6,7 @@
 /*   By: fwei <fwei@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 00:36:14 by fwei              #+#    #+#             */
-/*   Updated: 2025/03/16 00:40:12 by fwei             ###   ########.fr       */
+/*   Updated: 2025/03/16 00:45:20 by fwei             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,19 @@ void wdmatch(char *s1, char *s2)
 {
 	char	*v = s1;
 	
-    while (*s2 && *s1)
-        if (*s1 == *s2++)
-            s1++;
+	while (*s2 && *s1)
+		if (*s1 == *s2++)
+			s1++;
 
-    if (!*s1)
-        while (*v)
-            write(1, v++, 1);
+	if (!*s1)
+		while (*v)
+			write(1, v++, 1);
 }
 
 int main(int ac, char **av) 
 {
-    if (ac == 3)
-        wdmatch(av[1], av[2]);
-    write(1, "\n", 1);
-    return 0;
+	if (ac == 3)
+		wdmatch(av[1], av[2]);
+	write(1, "\n", 1);
+	return 0;
 }
