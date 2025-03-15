@@ -6,7 +6,7 @@
 /*   By: fwei <fwei@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 16:17:34 by fwei              #+#    #+#             */
-/*   Updated: 2025/03/07 16:19:17 by fwei             ###   ########.fr       */
+/*   Updated: 2025/03/14 14:26:41 by fwei             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@ void	sort_int_tab(int *tab, unsigned int size)
 	for (unsigned int v = 1; v < size; v++)
 	{
 		int fei = tab[v];
-		int w = v - 1;
+		int soul = v - 1;
 		
-		while (w >= 0 && tab[w] > fei)
+		while (soul >= 0 && tab[soul] > fei)
 		{
-			tab[w + 1] = tab[w];
-			w = w - 1;
+			tab[soul + 1] = tab[soul];
+			soul = soul - 1;
 		}
-		tab[w + 1] = fei;
+		tab[soul + 1] = fei;
 	}
 }
 

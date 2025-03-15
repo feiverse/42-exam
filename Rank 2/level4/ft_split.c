@@ -6,7 +6,7 @@
 /*   By: fwei <fwei@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 16:10:44 by fwei              #+#    #+#             */
-/*   Updated: 2025/03/07 16:13:55 by fwei             ###   ########.fr       */
+/*   Updated: 2025/03/11 14:02:25 by fwei             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -160,6 +160,18 @@ galaxy .star
 
 
 /* test */
+
+int main() 
+{
+	char *c = "   Bonjour   fei\tthis is  answers  !  \n";
+	char **w = ft_split(c);
+
+	for (int v = 0; w[v]; v++)
+		printf("%s\n", w[v]);
+	return 0;
+}
+
+
 int main() 
 {
 	char *c = "   Bonjour   fei\tthis is  answers  !  \n";
@@ -167,5 +179,14 @@ int main()
 
 	for (int v = 0; w[v]; v++)
 		printf("universe %d: %s\n", v + 1, w[v]);
+	return 0;
+}
+
+
+int main(int ac, char **av)
+{
+	char **fei = ft_split(av[1]);
+	for (int v = 0; fei[v]; v++)
+		printf("%s\n", fei[v]);
 	return 0;
 }

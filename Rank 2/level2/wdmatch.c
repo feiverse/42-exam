@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hidenp.c                                           :+:      :+:    :+:   */
+/*   wdmatch.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fwei <fwei@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/07 15:26:04 by fwei              #+#    #+#             */
-/*   Updated: 2025/03/16 00:31:01 by fwei             ###   ########.fr       */
+/*   Created: 2025/03/16 00:36:14 by fwei              #+#    #+#             */
+/*   Updated: 2025/03/16 00:40:12 by fwei             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	main(int ac, char **av)
+void wdmatch(char *s1, char *s2) 
 {
-	if (ac == 3)
-	{
-		char *x = av[1], *y = av[2];
-		
-		while (*y && *x)
-			if (*y++ == *x)
-				x++;
-		write(1, (*x ? "0" : "1"), 1);
-	}
-	write(1, "\n", 1);
-	return 0;
+	char	*v = s1;
+	
+    while (*s2 && *s1)
+        if (*s1 == *s2++)
+            s1++;
+
+    if (!*s1)
+        while (*v)
+            write(1, v++, 1);
+}
+
+int main(int ac, char **av) 
+{
+    if (ac == 3)
+        wdmatch(av[1], av[2]);
+    write(1, "\n", 1);
+    return 0;
 }
