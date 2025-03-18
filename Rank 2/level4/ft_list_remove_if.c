@@ -27,7 +27,6 @@ void	ft_list_remove_if(t_list **begin_list, void *data_ref, int (*cmp)())
 	if (!begin_list || !*begin_list || !cmp)
 		return ;
 
-	// 先刪除頭部符合條件的節點
 	while (*begin_list && cmp((*begin_list)->data, data_ref) == 0)
 	{
 		pure = *begin_list;
