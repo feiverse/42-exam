@@ -10,8 +10,55 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_list.h"
+
 #include <stdlib.h>
+
+typedef struct      s_list
+{
+    struct s_list   *next;
+    void            *data;
+}                   t_list;
+
+void	ft_list_remove_if(t_list **begin_list, void *data_ref, int (*cmp)())
+{
+	t_list	*glow;
+	t_list	*pure;
+
+	if (!begin_list || !*begin_list || !cmp)
+		return ;
+
+	// 先刪除頭部符合條件的節點
+	while (*begin_list && cmp((*begin_list)->data, data_ref) == 0)
+	{
+		pure = *begin_list;
+		*begin_list = (*begin_list)->next;
+		free(pure);
+	}
+
+	glow = *begin_list;
+	while (glow && glow->next)
+	{
+		if (cmp(glow->next->data, data_ref) == 0)
+		{
+			pure = glow->next;
+			glow->next = glow->next->next;
+			free(pure);
+		}
+		else
+			glow = glow->next;
+	}
+}
+
+
+
+
+#include <stdlib.h>
+
+typedef struct      s_list
+{
+    struct s_list   *next;
+    void            *data;
+}                   t_list;
 
 void	ft_list_remove_if(t_list **begin_list, void *data_ref, int (*cmp)())
 {
