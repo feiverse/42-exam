@@ -1,5 +1,5 @@
-Assignment name  : first_word
-Expected files   : first_word.c
+Assignment name  : first_word -> word_0
+Expected files   : first_word.c ->word_0.c
 Allowed functions: write
 --------------------------------------------------------------------------------
 

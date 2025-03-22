@@ -16,7 +16,7 @@ int	max(int *tab, unsigned int len)
 		return 0;
 
 	int max = tab[0];
-	for (unsigned int v = 1; v < len; v++)
+	for (unsigned int v = 0; v < len; v++)
 		if (tab[v] > max)
 			max = tab[v];
 
