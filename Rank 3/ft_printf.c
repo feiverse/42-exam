@@ -6,7 +6,7 @@
 /*   By: fei <fei@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 06:36:37 by fei               #+#    #+#             */
-/*   Updated: 2025/05/29 06:37:38 by fei              ###   ########.fr       */
+/*   Updated: 2025/06/02 11:16:18 by fei              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@ int	putstr(char *s)
 		s = "(null)";
 	while (*s)
 		v += write(1, s++, 1);
-	return (v);
+	return v;
 }
 
 int	putnbr(int n)
 {
-	long	nb = n;
 	int		v = 0;
+	long	nb = n;
 
 	if (nb < 0)
 	{
@@ -43,42 +43,42 @@ int	putnbr(int n)
 	if (nb >= 10)
 		v += putnbr(nb / 10);
 	v += putchar(nb % 10 + '0');
-	return (v);
+	return v;
 }
 
 int	puthex(unsigned int n)
 {
-	char	*hex = "0123456789abcdef";
 	int		v = 0;
+	char	*hex = "0123456789abcdef";
 
 	if (n >= 16)
 		v += puthex(n / 16);
 	v += putchar(hex[n % 16]);
-	return (v);
+	return v;
 }
 
 int	ft_printf(const char *fei, ...)
 {
-	va_list	arc;
-	int		v = 0, w = 0;
+	va_list	done;
+	int		v = 0, m = 0;
 
-	va_start(arc, fei);
+	va_start(done, fei);
 	while (fei[v])
 	{
 		if (fei[v] == '%' && fei[v + 1])
 		{
 			v++;
 			if (fei[v] == 's')
-				w += putstr(va_arg(arc, char *));
+				m += putstr(va_arg(done, char *));
 			else if (fei[v] == 'd')
-				w += putnbr(va_arg(arc, int));
+				m += putnbr(va_arg(done, int));
 			else if (fei[v] == 'x')
-				w += puthex(va_arg(arc, unsigned int));
+				m += puthex(va_arg(done, unsigned int));
 		}
 		else
-			w += putchar(fei[v]);
+			m += putchar(fei[v]);
 		v++;
 	}
-	va_end(arc);
-	return (w);
+	va_end(done);
+	return m;
 }

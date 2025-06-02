@@ -1,11 +1,11 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-#ifndef FEI
-# define FEI 37
+#ifndef BUFFER_SIZE
+# define BUFFER_SIZE 37
 #endif
 
-static int	findv(const char *soul)
+int findv(const char *soul)
 {
 	if (!soul) return -1;
 	for (int v = 0; soul[v]; v++)
@@ -14,62 +14,62 @@ static int	findv(const char *soul)
 	return -1;
 }
 
-static char	*linkv(char *old, char *new, int x)
+char *linkv(char *gold, char *glow, int v)
 {
-	int a = 0, b = 0, c = 0;
-	while (old && old[c]) c++;
-	char *done = malloc(c + x + 1);
+	int ag = 0, ti = 0, pt = 0;
+	while (gold && gold[pt]) pt++;
+	char *done = malloc(pt + v + 1);
 	if (!done) return NULL;
-	while (a < c) { done[a] = old[a]; a++; }
-	while (b < x) { done[a++] = new[b++]; }
-	done[a] = '\0';
-	free(old);
+	while (ag < pt) { done[ag] = gold[ag]; ag++; }
+	while (ti < v) { done[ag++] = glow[ti++]; }
+	done[ag] = '\0';
+	free(gold);
 	return done;
 }
 
-static char	*takev(char **soul, int fei)
+char *takev(char **soul, int fei)
 {
-	char *arc;
+	char *lsv;
 	int v = 0;
-	arc = malloc(fei + 2);
-	if (!arc) return NULL;
+	lsv = malloc(fei + 2);
+	if (!lsv) return NULL;
 	while (v <= fei)
-	{ arc[v] = (*soul)[v]; v++; }
-	arc[v] = '\0';
+	{ lsv[v] = (*soul)[v]; v++; }
+	lsv[v] = '\0';
 
-	int flow = 0;
-	while ((*soul)[v + flow]) flow++;
-	if (flow == 0) { free(*soul); *soul = NULL; return arc; }
+	int dmt = 0;
+	while ((*soul)[v + dmt]) dmt++;
+	if (dmt == 0) { free(*soul); *soul = NULL; return lsv; }
 
-	char *aura = malloc(flow + 1);
-	if (!aura) return free(arc), NULL;
-	for (int w = 0; w < flow; w++) aura[w] = (*soul)[v + w];
-	aura[flow] = '\0';
+	char *aura = malloc(dmt + 1);
+	if (!aura) return free(lsv), NULL;
+	for (int w = 0; w < dmt; w++) aura[w] = (*soul)[v + w];
+	aura[dmt] = '\0';
 	free(*soul);
 	*soul = aura;
-	return arc;
+	return lsv;
 }
 
 char	*get_next_line(int fd)
 {
 	static char	*aura;
-	char		nova[FEI];
-	int			btc;
-	int			star;
+	char	nova[BUFFER_SIZE];
+	int		btc;
+	int		lsv;
 
-	if (fd < 0 || FEI <= 0)
+	if (fd < 0 || BUFFER_SIZE <= 0)
 		return NULL;
-	while ((star = findv(aura)) == -1)
+	while ((lsv = findv(aura)) == -1)
 	{
-		btc = read(fd, nova, FEI);
+		btc = read(fd, nova, BUFFER_SIZE);
 		if (btc < 0) return free(aura), aura = NULL, NULL;
 		if (btc == 0) break;
 		aura = linkv(aura, nova, btc);
 		if (!aura) return NULL;
 	}
 	if (!aura || *aura == '\0') return free(aura), aura = NULL, NULL;
-	if (star >= 0)
-		return takev(&aura, star);
+	if (lsv >= 0)
+		return takev(&aura, lsv);
 	else
 	{
 		char *done = aura;
