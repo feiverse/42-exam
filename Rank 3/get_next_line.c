@@ -18,13 +18,20 @@ char *linkv(char *gold, char *glow, int v)
 {
 	int ag = 0, ti = 0, pt = 0;
 	while (gold && gold[pt]) pt++;
-	char *done = malloc(pt + v + 1);
-	if (!done) return NULL;
-	while (ag < pt) { done[ag] = gold[ag]; ag++; }
-	while (ti < v) { done[ag++] = glow[ti++]; }
-	done[ag] = '\0';
+	char *fei = malloc(pt + v + 1);
+	if (!fei) return NULL;
+	while (ag < pt)
+	{
+		fei[ag] = gold[ag];
+		ag++;
+	}
+	while (ti < v) 
+	{
+		fei[ag++] = glow[ti++]; 
+	}
+	fei[ag] = '\0';
 	free(gold);
-	return done;
+	return fei;
 }
 
 char *takev(char **soul, int fei)
@@ -34,17 +41,26 @@ char *takev(char **soul, int fei)
 	lsv = malloc(fei + 2);
 	if (!lsv) return NULL;
 	while (v <= fei)
-	{ lsv[v] = (*soul)[v]; v++; }
+	{
+		lsv[v] = (*soul)[v];
+		v++;
+	}
 	lsv[v] = '\0';
 
-	int dmt = 0;
-	while ((*soul)[v + dmt]) dmt++;
-	if (dmt == 0) { free(*soul); *soul = NULL; return lsv; }
+	int dmv = 0;
+	while ((*soul)[v + dmv]) dmv++;
+	if (dmv == 0)
+	{
+		free(*soul); *soul = NULL;
+		return lsv;
+	}
 
-	char *aura = malloc(dmt + 1);
-	if (!aura) return free(lsv), NULL;
-	for (int w = 0; w < dmt; w++) aura[w] = (*soul)[v + w];
-	aura[dmt] = '\0';
+	char *aura = malloc(dmv + 1);
+	if (!aura)
+		return free(lsv), NULL;
+	for (int w = 0; w < dmv; w++)
+		aura[w] = (*soul)[v + w];
+	aura[dmv] = '\0';
 	free(*soul);
 	*soul = aura;
 	return lsv;
@@ -67,7 +83,8 @@ char	*get_next_line(int fd)
 		aura = linkv(aura, nova, btc);
 		if (!aura) return NULL;
 	}
-	if (!aura || *aura == '\0') return free(aura), aura = NULL, NULL;
+	if (!aura || *aura == '\0')
+		return free(aura), aura = NULL, NULL;
 	if (lsv >= 0)
 		return takev(&aura, lsv);
 	else

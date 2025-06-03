@@ -6,7 +6,7 @@
 /*   By: fei <fei@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 06:36:37 by fei               #+#    #+#             */
-/*   Updated: 2025/06/02 11:16:18 by fei              ###   ########.fr       */
+/*   Updated: 2025/06/03 04:29:51 by fei              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,19 +30,19 @@ int	putstr(char *s)
 	return v;
 }
 
-int	putnbr(int n)
+int	putnbr(int nb)
 {
 	int		v = 0;
-	long	nb = n;
+	long	n = nb;
 
-	if (nb < 0)
+	if (n < 0)
 	{
 		v += putchar('-');
-		nb = -nb;
+		n = -n;
 	}
-	if (nb >= 10)
-		v += putnbr(nb / 10);
-	v += putchar(nb % 10 + '0');
+	if (n >= 10)
+		v += putnbr(n / 10);
+	v += putchar(n % 10 + '0');
 	return v;
 }
 
