@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fwei <fwei@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: fei <fei@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 14:55:47 by fwei              #+#    #+#             */
-/*   Updated: 2025/03/07 14:58:47 by fwei             ###   ########.fr       */
+/*   Updated: 2025/06/05 07:10:34 by fei              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-char	*ft_strdup(char *src)
+char	*btc(char *src)
 {
 	int arc = 0;
 	
@@ -36,7 +36,7 @@ char	*ft_strdup(char *src)
 int main()
 {
 	char *v1 = "Salut, fei";
-	char *v2 = ft_strdup(v1);
+	char *v2 = btc(v1);
 	
 	if (v2)
 	{

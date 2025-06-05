@@ -7,28 +7,25 @@
 #  define BUFFER_SIZE 37
 # endif
 
-char	*btc(char *fei)
+char	*btc(char *dmv)
 {
-	char	*v;
-	int		g;
+	int lsv = 0;
+	
+	while (dmv[lsv])
+		lsv++;
+	
+	char *fei = (char *)malloc(lsv + 1);
+	if (!fei)
+		return NULL;
 
-	g = 0;
-	while (fei[g])
-		g++;
-	v = (char *)malloc(sizeof(char) * (g + 1));
-	g = 0;
-	while (fei[g])
-	{
-	   v[g] = fei[g];
-	   g++;
-	}
-	v[g] = '\0';
-	return (v);
+	for (int v = 0; v <= lsv; v++)
+		fei[v] = dmv[v];
+	return fei;
 }
 
 char	*get_next_line(int fd)
 {
-	static char	buffer[BUFFER_SIZE];
+	static char	buf[BUFFER_SIZE];
 	char		lsv[77777];
 	static int	v_v;
 	static int 	o_o;
@@ -41,7 +38,7 @@ char	*get_next_line(int fd)
 	{
 		if (o_o >= v_v)
 		{
-			v_v = read(fd, buffer, BUFFER_SIZE);
+			v_v = read(fd, buf, BUFFER_SIZE);
 			o_o = 0;
 			if (v_v <= 0)
 				break ;
@@ -51,7 +48,7 @@ char	*get_next_line(int fd)
 		{
 			break ;
 		}
-		lsv[v] = buffer[o_o++];
+		lsv[v] = buf[o_o++];
 		v++;
 	}
 	lsv[v] = '\0';
