@@ -6,13 +6,13 @@
 /*   By: fei <fei@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 14:55:47 by fwei              #+#    #+#             */
-/*   Updated: 2025/06/05 07:10:34 by fei              ###   ########.fr       */
+/*   Updated: 2025/06/06 14:44:20 by fei              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-char	*btc(char *src)
+char	*findv(char *src)
 {
 	int arc = 0;
 	
@@ -36,7 +36,7 @@ char	*btc(char *src)
 int main()
 {
 	char *v1 = "Salut, fei";
-	char *v2 = btc(v1);
+	char *v2 = findv(v1);
 	
 	if (v2)
 	{
