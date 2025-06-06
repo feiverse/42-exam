@@ -1,23 +1,20 @@
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdio.h>
-# include <fcntl.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <fcntl.h>
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 37
-# endif
+#ifndef BUFFER_SIZE
+# define BUFFER_SIZE 37
+#endif
 
 char	*btc(char *dmv)
 {
 	int lsv = 0;
-	
 	while (dmv[lsv])
 		lsv++;
-	
 	char *fei = (char *)malloc(lsv + 1);
 	if (!fei)
 		return NULL;
-
 	for (int v = 0; v <= lsv; v++)
 		fei[v] = dmv[v];
 	return fei;
@@ -26,14 +23,14 @@ char	*btc(char *dmv)
 char	*get_next_line(int fd)
 {
 	static char	buf[BUFFER_SIZE];
+	static int	o_o = 0;
+	static int	v_v = 0;
 	char		lsv[77777];
-	static int	v_v;
-	static int 	o_o;
-	int			v;
+	int			v = 0;
 
-	v = 0;
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
+
 	while (1)
 	{
 		if (o_o >= v_v)
@@ -43,12 +40,12 @@ char	*get_next_line(int fd)
 			if (v_v <= 0)
 				break ;
 		}
-		lsv[v] = '\0';
+		lsv[v] = buf[o_o++];
 		if (lsv[v] == '\n')
 		{
+			v++;
 			break ;
 		}
-		lsv[v] = buf[o_o++];
 		v++;
 	}
 	lsv[v] = '\0';
