@@ -9,15 +9,15 @@
 
 char	*findv(char *dmv) //chasing dreams
 {
-	int lsv = 0; // if without acid
-	while (dmv[lsv])
-		lsv++; // looking for the tabs
-	char *fei = (char *)malloc(lsv + 1); // find the dealer
-	if (!fei) // if not what i want
-		return NULL; // just don't but it.
-	for (int v = 0; v <= lsv; v++) // keeping looking
-		fei[v] = dmv[v]; //finally found
-	return fei; // mission done
+	int fei = 0; // if without acid
+	while (dmv[fei])
+		fei++; // looking for the tabs
+	char *lsv = (char *)malloc(fei + 1); // find the dealer
+	if (!lsv) // if not what i want
+		return NULL; // don't buy it.
+	for (int v = 0; v <= fei; v++) // keeping looking
+		lsv[v] = dmv[v]; //finally found
+	return lsv; // got it!
 }
 
 char	*get_next_line(int fd)
@@ -30,7 +30,6 @@ char	*get_next_line(int fd)
 
 	if (fd < 0 || BUFFER_SIZE <= 0) 
 		return (NULL); // if empty tabs, no trip happend
-
 	while (1) // took a tab
 	{
 		if (o_o >= v_v) // if good tab
@@ -50,6 +49,6 @@ char	*get_next_line(int fd)
 	}
 	lsv[v] = '\0'; // stop trip
 	if (v == 0) // if everything done
-		return (NULL); // back universe
-	return (findv(lsv)); // find next target
+		return NULL; // back universe
+	return (findv(lsv)); // find next tab.
 }

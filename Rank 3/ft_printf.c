@@ -1,5 +1,3 @@
-
-
 #include <stdarg.h>
 #include <unistd.h>
 #include <stdlib.h>
@@ -49,26 +47,26 @@ int	puthex(unsigned int n)
 
 int	ft_printf(const char *fei, ...)
 {
-	va_list	done;
-	int		v = 0, m = 0;
+	va_list	v;
+	int		w = 0, m = 0;
 
-	va_start(done, fei);
-	while (fei[v])
+	va_start(v, fei);
+	while (fei[w])
 	{
-		if (fei[v] == '%' && fei[v + 1])
+		if (fei[w] == '%' && fei[w + 1])
 		{
-			v++;
-			if (fei[v] == 's')
-				m += putstr(va_arg(done, char *));
-			else if (fei[v] == 'd')
-				m += putnbr(va_arg(done, int));
-			else if (fei[v] == 'x')
-				m += puthex(va_arg(done, unsigned int));
+			w++;
+			if (fei[w] == 's')
+				m += putstr(va_arg(v, char *));
+			else if (fei[w] == 'd')
+				m += putnbr(va_arg(v, int));
+			else if (fei[w] == 'x')
+				m += puthex(va_arg(v, unsigned int));
 		}
 		else
-			m += putchar(fei[v]);
-		v++;
+			m += putchar(fei[w]);
+		w++;
 	}
-	va_end(done);
+	va_end(v);
 	return m;
 }
