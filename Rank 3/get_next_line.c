@@ -7,48 +7,49 @@
 # define BUFFER_SIZE 37
 #endif
 
-char	*findv(char *dmv) //chasing dreams
+char	*findv(char *dmv)
 {
-	int fei = 0; // if without acid
+	int fei = 0;
+
 	while (dmv[fei])
-		fei++; // looking for the tabs
-	char *lsv = (char *)malloc(fei + 1); // find the dealer
-	if (!lsv) // if not what i want
-		return NULL; // don't buy it.
-	for (int v = 0; v <= fei; v++) // keeping looking
-		lsv[v] = dmv[v]; //finally found
-	return lsv; // got it!
+		fei++;
+	char *lsv = (char *)malloc(fei + 1);
+	if (!lsv)
+		return NULL;
+	for (int v = 0; v <= fei; v++)
+		lsv[v] = dmv[v];
+	return lsv;
 }
 
 char	*get_next_line(int fd)
 {
 	static char	buf[BUFFER_SIZE];
-	static int	o_o = 0; // good
-	static int	v_v = 0; // thinking
-	char		lsv[77777]; //my soul space
-	int			v = 0; // calm
+	static int	o_o = 0;
+	static int	v_v = 0;
+	char		lsv[77777];
+	int			v = 0;
 
 	if (fd < 0 || BUFFER_SIZE <= 0) 
-		return (NULL); // if empty tabs, no trip happend
-	while (1) // took a tab
+		return NULL;
+	while (1)
 	{
-		if (o_o >= v_v) // if good tab
+		if (o_o >= v_v)
 		{
-			v_v = read(fd, buf, BUFFER_SIZE); //read ur mind
-			o_o = 0; // it's amazing trip
-			if (v_v <= 0) // if someting wrong
-				break ; // stop
+			v_v = read(fd, buf, BUFFER_SIZE);
+			o_o = 0;
+			if (v_v <= 0)
+				break;
 		}
-		lsv[v] = buf[o_o++]; // keep the truth
-		if (lsv[v] == '\n') // if found some empty
+		lsv[v] = buf[o_o++];
+		if (lsv[v] == '\n')
 		{
-			v++; // thinking
-			break ; //saved it
+			v++;
+			break;
 		}
-		v++; // keep thinking
+		v++;
 	}
-	lsv[v] = '\0'; // stop trip
-	if (v == 0) // if everything done
-		return NULL; // back universe
-	return (findv(lsv)); // find next tab.
+	lsv[v] = '\0';
+	if (v == 0)
+		return NULL;
+	return (findv(lsv));
 }
