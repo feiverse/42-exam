@@ -1,15 +1,15 @@
 #include <stdarg.h>
-#include <unistd.h>
 #include <stdlib.h>
+#include <unistd.h>
 
-int	putchar(char c)
+int putchar(char c)
 {
 	return (write(1, &c, 1));
 }
 
-int	putstr(char *s)
+int putstr(char *s)
 {
-	int	v = 0;
+	int v = 0;
 
 	if (!s)
 		s = "(null)";
@@ -18,37 +18,37 @@ int	putstr(char *s)
 	return v;
 }
 
-int	putnbr(int nb)
+int putnbr(int m)
 {
-	int		v = 0;
-	long	n = nb;
+	int v = 0;
+	long n = m;
 
 	if (n < 0)
 	{
 		v += putchar('-');
 		n = -n;
 	}
-	if (n >= 10)
+	if (n > 9)
 		v += putnbr(n / 10);
 	v += putchar(n % 10 + '0');
 	return v;
 }
 
-int	puthex(unsigned int n)
+int puthex(unsigned int n)
 {
-	int		v = 0;
-	char	*hex = "0123456789abcdef";
+	int v = 0;
+	char *hex = "0123456789abcdef";
 
-	if (n >= 16)
+	if (n > 15)
 		v += puthex(n / 16);
 	v += putchar(hex[n % 16]);
 	return v;
 }
 
-int	ft_printf(const char *fei, ...)
+int ft_printf(const char *fei, ...)
 {
-	va_list	v;
-	int		w = 0, m = 0;
+	va_list v;
+	int w = 0, m = 0;
 
 	va_start(v, fei);
 	while (fei[w])
